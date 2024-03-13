@@ -23,11 +23,7 @@ import java.util.UUID;
 @Entity
 public class Beer {
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            type = org.hibernate.id.uuid.UuidGenerator.class
-    )
+    @UuidGenerator
     @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
     private UUID id;
 
@@ -46,5 +42,6 @@ public class Beer {
     @Column(unique = true)
     private Long upc;
     private BigDecimal price;
-    private Integer quantityOnHand;
+    private Integer quantityToBrew;
+    private Integer minOnHand;
 }
