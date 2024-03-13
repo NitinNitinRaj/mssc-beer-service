@@ -1,9 +1,6 @@
 package com.nr.msscbeerservice.web.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Null;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,14 +20,15 @@ public class BeerDto {
 
     @Null(message = "Version should not be added.")
     private Integer version;
-    
+
     @Null(message = "Create Date should not be added.")
-    private OffsetDateTime createDate;
+    private OffsetDateTime createdDate;
 
     @Null(message = "Last Modified Date should not be added.")
     private OffsetDateTime lastModifiedDate;
 
     @NotBlank(message = "Beer name is blank.")
+    @Size(min = 3, max = 100, message = "Beer name should be b/w 3 and 100 characters.")
     private String beerName;
 
     @NotNull(message = "Beer Style cannot be null.")
@@ -44,5 +42,6 @@ public class BeerDto {
     @NotNull(message = "Price cannot be null.")
     private BigDecimal price;
 
+    @Positive(message = "Quantity on hand should be positive.")
     private Integer quantityOnHand;
 }
