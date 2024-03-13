@@ -21,7 +21,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
-        <org.lombok.version>1.18.18</org.lombok.version>
+        <org.lombok.version>1.18.22</org.lombok.version>
     </properties>
     <dependencies>
         <dependency>
